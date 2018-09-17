@@ -133,12 +133,55 @@ int main(int argc, char **argv){
 	const float antwoord = (float) teller1 / noemer1 + plusmin * (float) teller2 / noemer2;
 	const float maxFout = 0.1;
 	std::cout << "Wat is " << teller1 << "/" << noemer1 << (plusmin == 1 ? "+" : "-") << teller2 << "/" << noemer2 << "?" << std::endl;
-	std::cout << teller1 << " " << teller2 << " " << noemer1 << " " << noemer2 << " " << plusmin << " " << antwoord << std::endl;
 	int tellerAntwoord = teller1 * noemer2 + plusmin * teller2 * noemer1, noemerAntwoord = noemer1 * noemer2;
 	int ggv = 1; //Grootst gemeenschappelijke veelvoud
 	//Bereken de ggv, de maximaal mogelijke ggv is de kleinste van de noemer en de teller
-	for(int i = 1;i < std::min(tellerAntwoord, noemerAntwoord);i++) if(tellerAntwoord % i == 0 && noemerAntwoord % i == 0) ggv = i;
+	for(int i = 2;i < std::min(abs(tellerAntwoord), abs(noemerAntwoord)) + 1;i++) if(abs(tellerAntwoord) % i == 0 && abs(noemerAntwoord) % i == 0) ggv = i;
+	std::cout << tellerAntwoord << " " << noemerAntwoord;
 	tellerAntwoord /= ggv;
 	noemerAntwoord /= ggv;
-	
+	int teller, noemer;
+	std::cout << " " << tellerAntwoord << " " << noemerAntwoord << std::endl;
+	std::cout << "Teller: ";
+	std::cin >> teller;
+	std::cout << "Noemer: ";
+	std::cin >> noemer;
+	int ggv2 = 1; //Doe ggv opnieuw met antwoord
+	for(int i = 2;i < std::min(abs(teller), abs(noemer)) + 1;i++) if(abs(teller) % i == 0 && abs(noemer) % i == 0) ggv2 = i;
+	std::cout << teller << " " << noemer;
+	teller /= ggv2;
+	noemer /= ggv2;
+	std::cout << " " << teller << " " << noemer << std::endl;
+	if(teller == tellerAntwoord && noemer == noemerAntwoord){
+		std::cout << "Correct! En nu als decimaal getal (+/- " << maxFout << ")? ";
+		float dec;
+		std::cin >> dec;
+		if(dec - maxFout <= antwoord && antwoord <= dec + maxFout){
+			std::cout << "Gefeliciteerd! " << onderwerpCap << " bent toegelaten tot de betastudie!" << std::endl;
+			return 0;
+		}
+	}
+	std::cout << "Fout! Het antwoord was " << tellerAntwoord << "/" << noemerAntwoord << " = " << antwoord << std::endl;
+	std::cout << "Om nog toegelaten te worden tot een alfastudie, beantwoord de volgende vraag:" << std::endl;
+	if(jaren >= 30){
+		std::cout << "TODO: 30+ vraag" << std::endl;
+		std::cout << "A) " << std::endl;
+		std::cout << "B) " << std::endl;
+		std::cout << "C) " << std::endl;
+		std::cout << "D) " << std::endl;
+	}else{
+		std::cout << "TODO: 29- vraag" << std::endl;
+		std::cout << "A) " << std::endl;
+		std::cout << "B) " << std::endl;
+		std::cout << "C) " << std::endl;
+		std::cout << "D) " << std::endl;
+	}
+	std::string antw;
+	std::cin >> antw;
+	if(antw == "B" || antw == "b"){
+		std::cout << "Gefeliciteerd! " << onderwerpCap << " bent toegelaten voor een alfastudie!" << std::endl;
+		return 0;
+	}
+	std::cout << "Fout! " << onderwerpCap << " bent ook voor de alfastudie niet toegelaten!" << std::endl;
+	return 1;
 }
