@@ -101,7 +101,6 @@ int main(int argc, char **argv){
 	std::string onderwerp = jaren >= 30 ? "u" : "jij";
 	std::string onderwerpCap = jaren >= 30 ? "U" : "Jij";
 	std::string bezittelijkVnw = jaren >= 30 ? "uw" : "je";
-	std::string bezittelijkVnwCap = jaren >= 30 ? "Uw" : "Je";
 	
 	//Jarig
 	if(gebMaand == maandNu && gebDag == dagNu) std::cout << "Gefeliciteerd met " << bezittelijkVnw << " verjaardag!" << std::endl;
@@ -164,17 +163,17 @@ int main(int argc, char **argv){
 	std::cout << "Fout! Het antwoord was " << tellerAntwoord << "/" << noemerAntwoord << " = " << antwoord << std::endl;
 	std::cout << "Om nog toegelaten te worden tot een alfastudie, beantwoord de volgende vraag:" << std::endl;
 	if(jaren >= 30){
-		std::cout << "TODO: 30+ vraag" << std::endl;
-		std::cout << "A) " << std::endl;
-		std::cout << "B) " << std::endl;
-		std::cout << "C) " << std::endl;
-		std::cout << "D) " << std::endl;
+		std::cout << "Wie is de schrijver van \"Het Behouden Huis\"?" << std::endl;
+		std::cout << "A) Harry Mulisch" << std::endl;
+		std::cout << "B) Willem Frederik Hermans" << std::endl; //Antwoord
+		std::cout << "C) Gerard van het Reve" << std::endl;
+		std::cout << "D) Jan Wolkers" << std::endl;
 	}else{
-		std::cout << "TODO: 29- vraag" << std::endl;
-		std::cout << "A) " << std::endl;
-		std::cout << "B) " << std::endl;
-		std::cout << "C) " << std::endl;
-		std::cout << "D) " << std::endl;
+		std::cout << "Wie is de schrijver van \"De Ontdekking van de Hemel\"?" << std::endl;
+		std::cout << "A) Willem Frederik Hermans" << std::endl;
+		std::cout << "B) Harry Mulisch" << std::endl; //Antwoord
+		std::cout << "C) Jan Wolkers" << std::endl;
+		std::cout << "D) Gerard van het Reve" << std::endl;
 	}
 	std::string antw;
 	std::cin >> antw;
@@ -182,6 +181,6 @@ int main(int argc, char **argv){
 		std::cout << "Gefeliciteerd! " << onderwerpCap << " bent toegelaten voor een alfastudie!" << std::endl;
 		return 0;
 	}
-	std::cout << "Fout! " << onderwerpCap << " bent ook voor de alfastudie niet toegelaten!" << std::endl;
+	std::cout << "Fout! Het antwoord is B. " << onderwerpCap << " bent ook voor de alfastudie geweigerd." << std::endl;
 	return 1;
 }
