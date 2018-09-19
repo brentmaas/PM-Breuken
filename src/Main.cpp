@@ -4,7 +4,7 @@
  * Functie: Selectie voor een betastudie, of eventueel een alfastudie.
  * Getest op: Windows 10 + MSys2 (MinGW), gcc 8.2.0
  * Getest met: g++ Assignment1 Main.cpp -std=c++17 -Wall
- * Laatst bewerkt: 13/09/2018
+ * Laatst bewerkt: 19/09/2018
  */
 
 #include <iostream>
@@ -23,7 +23,7 @@ const std::string infoBlokje = ""
 		"beantwoord. Aan de hand van deze antwoorden wordt bepaald of deze\n"
 		"persoon een betastudie, of eventueel alfastudie, mag doen.\n"
 		"\n"
-		"Laatst bewerkt: 13/09/2018\n"
+		"Laatst bewerkt: 19/09/2018\n"
 		"////////////////////////////////////////////////\n";
 
 //Dagen per maand als getal, met een nul ervoor om niet telkens dagenInMaand[maand-1] te hoeven doen
